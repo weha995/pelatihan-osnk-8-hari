@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Pelatihan Olimpiade Fisika</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --info-color: #3498db;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        table, th, td {
+            border: 1px solid #e1e1e1;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px 15px;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .materi-list {
+            list-style-type: none;
+        }
+        
+        .materi-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .materi-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin: 2px;
+        }
+        
+        .tag-2023 {
+            background-color: #ff8a65;
+            color: white;
+        }
+        
+        .tag-2024 {
+            background-color: #4fc3f7;
+            color: white;
+        }
+        
+        .tag-2021 {
+            background-color: #81c784;
+            color: white;
+        }
+        
+        .tag-2022 {
+            background-color: #ba68c8;
+            color: white;
+        }
+        
+        .day-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .day-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .day-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .day-number {
+            background: white;
+            color: var(--secondary-color);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+        
+        .day-content {
+            padding: 1.5rem;
+        }
+        
+        .day-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .day-description ul {
+            list-style-type: none;
+        }
+        
+        .day-description li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .day-description li::before {
+            content: "→";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 1rem;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Materi Pelatihan Olimpiade Fisika</h1>
+        <div class="subtitle">Persiapan Intensif 8 Hari untuk OSN/OSNK Fisika SMA</div>
+    </header>
+    
+    <section>
+        <h2>Klasifikasi Soal OSN/OSNK Fisika Berdasarkan Materi</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Materi</th>
+                    <th>Soal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Matematika untuk Fisika</td>
+                    <td>
+                        <span class="tag tag-2023">OSNK 2023: 27, 28</span>
+                        <span class="tag tag-2024">OSN-K 2024: 8</span>
+                        <span class="tag tag-2021">OSK 2021: 1, 2</span>
+                        <span class="tag tag-2022">OSK 2022: 2, 30</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Vektor</td>
+                    <td>
+                        <span class="tag tag-2023">OSNK 2023: 3</span>
+                        <span class="tag tag-2021">OSK 2021: 5, 11</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Kinematika</td>
+                    <td>
+                        <span class="tag tag-2023">OSNK 2023: 1, 2, 7, 8, 9, 15, 21, 24</span>
+                        <span class="tag tag-2024">OSN-K 2024: 1, 2, 3, 4, 5, 10, 24</span>
+                        <span class="tag tag-2021">OSK 2021: 3, 4, 6, 7, 19</span>
+                        <span class="tag tag-2022">OSK 2022: 1, 3, 4, 10, 12, 21</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Hukum Newton</td>
+                    <td>
+                        <span class="tag tag-2023">OSNK 2023: 6, 11, 12, 13, 16, 18, 22, 34</span>
+                        <span class="tag tag-2024">OSN-K 2024: 6, 12, 15, 34</span>
+                        <span class="tag tag-2021">OSK 2021: 9, 15</span>
+                        <span class="tag tag-2022">OSK 2022: 6, 7, 9, 13, 15</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Momentum Impuls</td>
+                    <td>
+                        <span class="tag tag-2023">OSNK 2023: 26, 31, 35</span>
+                        <span class="tag tag-2024">OSN-K 2024: 33, 37</span>
+                        <span class="tag tag-2021">OSK 2021: 17, 26</span>
+                        <span class="tag tag-2022">OSK 2022: 14, 22, 26</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Energi</td>
+                    <td>
+                        <span class="tag tag-2023">OSNK 2023: 4, 5, 17, 19, 20, 25, 29, 36, 39</span>
+                        <span class="tag tag-2024">OSN-K 2024: 16, 18, 19, 20, 23, 25, 30, 36</span>
+                        <span class="tag tag-2021">OSK 2021: 8, 16, 18, 20, 23</span>
+                        <span class="tag tag-2022">OSK 2022: 8, 11, 18, 20, 21, 23</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Dinamika Rotasi</td>
+                    <td>
+                        <span class="tag tag-2023">OSNK 2023: 10, 14, 23, 30, 32, 33, 37, 40</span>
+                        <span class="tag tag-2024">OSN-K 2024: 7, 13, 14, 17, 25, 27, 28, 31, 32, 33, 35</span>
+                        <span class="tag tag-2021">OSK 2021: 10, 27, 29, 30, 32, 33, 34</span>
+                        <span class="tag tag-2022">OSK 2022: 17, 19, 27, 28, 31, 32, 33, 34, 36, 37</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Kesetimbangan Benda Tegar</td>
+                    <td>
+                        <span class="tag tag-2023">OSNK 2023: 38</span>
+                        <span class="tag tag-2024">OSN-K 2024: 9, 11, 35</span>
+                        <span class="tag tag-2021">OSK 2021: 12, 13, 14</span>
+                        <span class="tag tag-2022">OSK 2022: 16, 19</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Hukum Gravitasi</td>
+                    <td>
+                        <span class="tag tag-2021">OSK 2021: 1, 29</span>
+                        <span class="tag tag-2022">OSK 2022: 29</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Gerak Harmonik Sederhana</td>
+                    <td>
+                        <span class="tag tag-2024">OSN-K 2024: 1, 2, 26, 29, 38</span>
+                        <span class="tag tag-2021">OSK 2021: 28, 31</span>
+                        <span class="tag tag-2022">OSK 2022: 24, 25, 26, 27, 28</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section>
+        <h2>Jadwal Pelatihan Olimpiade Fisika (8 Hari)</h2>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span>Hari Pertama</span>
+                <span class="day-number">1</span>
+            </div>
+            <div class="day-content">
+                <div class="day-title">Pre-test & Matematika untuk Fisika</div>
+                <div class="day-description">
+                    <ul>
+                        <li>Pengukuran dan analisis data</li>
+                        <li>Notasi ilmiah dan angka penting</li>
+                        <li>Aljabar untuk fisika</li>
+                        <li>Kalkulus dasar (turunan, integral)</li>
+                        <li>Transformasi trigonometri</li>
+                        <li>Analisis dimensi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span>Hari Kedua</span>
+                <span class="day-number">2</span>
+            </div>
+            <div class="day-content">
+                <div class="day-title">Vektor & Kinematika</div>
+                <div class="day-description">
+                    <ul>
+                        <li>Operasi vektor (penjumlahan, pengurangan, perkalian)</li>
+                        <li>Posisi, perpindahan, kecepatan, percepatan</li>
+                        <li>Gerak lurus beraturan dan gerak lurus berubah beraturan</li>
+                        <li>Gerak parabola dan gerak proyektil</li>
+                        <li>Gerak relatif</li>
+                        <li>Aplikasi dalam pemecahan soal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span>Hari Ketiga</span>
+                <span class="day-number">3</span>
+            </div>
+            <div class="day-content">
+                <div class="day-title">Hukum Newton & Kesetimbangan Benda Tegar</div>
+                <div class="day-description">
+                    <ul>
+                        <li>Hukum Newton I, II, III</li>
+                        <li>Gaya (normal, gesek, tegangan tali)</li>
+                        <li>Dinamika partikel pada bidang miring dan katrol</li>
+                        <li>Momen gaya dan pusat massa</li>
+                        <li>Kesetimbangan statis dan dinamis</li>
+                        <li>Syarat kesetimbangan translasi dan rotasi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span>Hari Keempat</span>
+                <span class="day-number">4</span>
+            </div>
+            <div class="day-content">
+                <div class="day-title">Momentum Impuls & Mid-test</div>
+                <div class="day-description">
+                    <ul>
+                        <li>Momentum linier dan impuls</li>
+                        <li>Hukum kekekalan momentum</li>
+                        <li>Tumbukan elastis dan tidak elastis</li>
+                        <li>Sistem partikel</li>
+                        <li>Pusat massa sistem</li>
+                        <li><strong>Mid-test:</strong> Evaluasi pemahaman materi hari 1-3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span>Hari Kelima</span>
+                <span class="day-number">5</span>
+            </div>
+            <div class="day-content">
+                <div class="day-title">Energi</div>
+                <div class="day-description">
+                    <ul>
+                        <li>Usaha dan energi</li>
+                        <li>Energi kinetik, potensial, dan mekanik</li>
+                        <li>Hukum kekekalan energi</li>
+                        <li>Daya dan efisiensi</li>
+                        <li>Penerapan pada sistem kompleks</li>
+                        <li>Teorema usaha-energi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span>Hari Keenam</span>
+                <span class="day-number">6</span>
+            </div>
+            <div class="day-content">
+                <div class="day-title">Dinamika Rotasi</div>
+                <div class="day-description">
+                    <ul>
+                        <li>Momen inersia</li>
+                        <li>Energi kinetik rotasi</li>
+                        <li>Momentum sudut dan kekekalannya</li>
+                        <li>Torsi dan percepatan sudut</li>
+                        <li>Kesetimbangan dinamis rotasi</li>
+                        <li>Gerak menggelinding dengan dan tanpa slip</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span>Hari Ketujuh</span>
+                <span class="day-number">7</span>
+            </div>
+            <div class="day-content">
+                <div class="day-title">Hukum Gravitasi & Gerak Harmonik Sederhana</div>
+                <div class="day-description">
+                    <ul>
+                        <li>Hukum Gravitasi Universal Newton</li>
+                        <li>Medan gravitasi dan potensial gravitasi</li>
+                        <li>Gerak planet dan satelit</li>
+                        <li>Hukum Kepler</li>
+                        <li>Getaran harmonik sederhana</li>
+                        <li>Bandul matematis dan fisis</li>
+                        <li>Sistem pegas-massa</li>
+                        <li>Resonansi dan redaman</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <span>Hari Kedelapan</span>
+                <span class="day-number">8</span>
+            </div>
+            <div class="day-content">
+                <div class="day-title">Latihan Soal & Post-test</div>
+                <div class="day-description">
+                    <ul>
+                        <li>Review seluruh materi</li>
+                        <li>Pembahasan soal-soal OSN/OSNK tahun-tahun sebelumnya</li>
+                        <li>Strategi dan tips menghadapi olimpiade</li>
+                        <li><strong>Post-test:</strong> Evaluasi menyeluruh dari semua materi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2025 Pelatihan Olimpiade Fisika SMA | Dibuat untuk tujuan pendidikan</p>
+        <p>Disiapkan oleh: Tim Pelatihan Olimpiade</p>
+    </footer>
+</body>
+</html>
